@@ -15,7 +15,9 @@
 
 <ul class="list-group col-md-4">
     {%for job in jobs%}
-    <li class="list-group-item">{{job}}</li>
+    <li class="list-group-item">{{job}} <a href="../delete_job/{{job.id}}">Удалить
+    </a></li>
+
     {%endfor%}
 </ul>
 

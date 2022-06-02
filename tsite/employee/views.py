@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from .forms import EmployeeForm,JobForm,WorkerForm
 from .models import Employee,Job,Worker
 
@@ -33,3 +34,15 @@ def add_worker(request):
         form = WorkerForm()
     return render(request,'employee/add_worker.html', {'form':form,
                                                     'workers':Worker.objects.all(),})
+def delete_job(request,job_id=None):
+    job_to_delete = Job.objects.get(id=job_id)
+    job_to_delete.delete()
+    return HttpResponseRedirect('../add_job')
+def delete_employee(request,employee_id = None):
+    employee_to_delete = Employee.objects.get(id = employee_id)
+    employee_to_delete.delete()
+    return HttpResponseRedirect('../add_employee')
+def delete_worker(request,worker_id=None):
+    worker_to_delete = Worker.objects.get(id = worker_id)
+    worker_to_delete.delete()
+    return HttpResponseRedirect('../add_worker')

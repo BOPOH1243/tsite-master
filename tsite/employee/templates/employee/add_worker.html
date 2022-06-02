@@ -15,7 +15,7 @@
 
 <ul class="list-group col-md-4">
     {%for worker in workers%}
-    <li class="list-group-item">{{worker}}</li>
+    <li class="list-group-item">{{worker}} <a href="../delete_worker/{{worker.id}}">Удалить</a></li>
     {%endfor%}
 </ul>
 
