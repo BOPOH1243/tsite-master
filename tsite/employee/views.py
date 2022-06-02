@@ -6,6 +6,11 @@ from .models import Employee,Job,Worker
 # Create your views here.
 def index(request):
     return render(request, 'employee/index.html')
+def employee_card(request,employee_id=None):
+    employee = Employee.objects.get(id = employee_id)
+    return render(request,'employee/employee_card.html',{'employee':employee,
+                                                         'work':Worker.objects.filter(employee=employee)})
+
 
 def add_employee(request):
     if request.method == 'POST':

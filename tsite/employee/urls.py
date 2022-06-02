@@ -8,5 +8,6 @@ urlpatterns = [
     path('delete_job/<job_id>',delete_job,name='delete_job'),
     path('delete_worker/<worker_id>',delete_worker,name='delete_worker'),
     path('delete_employee/<employee_id>',delete_employee,name='delete_employee'),
+    path('employee_card/<employee_id>',employee_card,name = 'employee_card'),
     path('',index,name='index'),
 ]
