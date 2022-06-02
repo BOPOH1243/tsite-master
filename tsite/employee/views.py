@@ -4,6 +4,9 @@ from .forms import EmployeeForm,JobForm,WorkerForm
 from .models import Employee,Job,Worker
 
 # Create your views here.
+def index(request):
+    return render(request, 'employee/index.html')
+
 def add_employee(request):
     if request.method == 'POST':
         form = EmployeeForm(request.POST)
